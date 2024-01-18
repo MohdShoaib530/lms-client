@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Routes>
-          {/* route */}
+
       </Routes>
     </>
   )
