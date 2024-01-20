@@ -4,12 +4,11 @@ function Footer() {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     return (
-        <>
-            <footer className="relative left-0 bottom-0 h-[10vh] flex flex-col  sm:flex-row items-center justify-between text-white bg-gray-800 py-5 sm:px-20 ">
-                <section className="text-lg">
+            <footer className="flex items-center justify-between flex-wrap space-y-5 md:space-y-0 px-5 text-white bg-gray-800 py-5 w-full">
+                <div className="text-lg">
                     Copyright {year} | All rights reserved
-                </section>
-                <section className="flex items-center justify-center gap-5 text-2xl text-white">
+                </div>
+                <div className="flex items-center justify-between text-2xl text-white w-fit gap-5">
                     <a href="" className="hover:text-yellow-500 transition-all ease-in-out duration-300">
                         <BsInstagram />
                     </a>
@@ -22,9 +21,8 @@ function Footer() {
                     <a href="" className="hover:text-yellow-500 transition-all ease-in-out duration-300">
                         <BsTwitter />
                     </a>
-                </section>
-            </footer>
-        </>
+                </div>
+            </footer>   
     );
 }
 
