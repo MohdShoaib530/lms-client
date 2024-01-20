@@ -22,10 +22,10 @@ function HomeLayout({ children }) {
     return (
         <div>
             <Navbar/>
-            <div className="drawer drawer-end absolute left-0 z-50 w-fit">
-                <input className="drawer-toggle" id="my-drawer-4" type="checkbox" />
+            <div className="drawer absolute left-0 z-50 w-fit">
+                <input className="drawer-toggle" id="my-drawer" type="checkbox" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer-4" className="cursor-pointer relative">
+                    <label htmlFor="my-drawer" className="cursor-pointer relative">
                         <FiMenu 
                             onClick={changeWidth}
                             size={"32px"}
@@ -34,7 +34,7 @@ function HomeLayout({ children }) {
                     </label>
                 </div>
                 <div className="drawer-side">
-                    <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay">
+                    <label htmlFor="my-drawer" aria-label="close sidebar" className="drawer-overlay">
                     </label>
                     <ul className="menu min-h-full p-4 w-48 sm:w-80 bg-base-200 text-base-content">
                         <li className="w-fit text-white border z-50">
