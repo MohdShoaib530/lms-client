@@ -2,6 +2,7 @@ import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
 
+import AboutUs from './pages/AboutUs';
 import HomePage from './pages/HomePage';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <Routes>
          <Route path='/' element= {<HomePage/>}></Route>
+         <Route path='/about' element= {<AboutUs/>}></Route>
       </Routes>
     </>
   )
