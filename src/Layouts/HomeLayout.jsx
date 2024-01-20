@@ -22,10 +22,10 @@ function HomeLayout({ children }) {
     return (
         <div>
             <Navbar/>
-            <div className="drawer absolute left-0 z-50 w-fit">
-                <input className="drawer-toggle" id="my-drawer" type="checkbox" />
+            <div className="drawer drawer-end absolute left-0 z-50 w-fit">
+                <input className="drawer-toggle" id="my-drawer-4" type="checkbox" />
                 <div className="drawer-content">
-                    <label htmlFor="my-drawer" className="cursor-pointer relative">
+                    <label htmlFor="my-drawer-4" className="cursor-pointer relative">
                         <FiMenu 
                             onClick={changeWidth}
                             size={"32px"}
@@ -33,11 +33,11 @@ function HomeLayout({ children }) {
                         />
                     </label>
                 </div>
-                <div className="drawer-side w-0">
-                    <label htmlFor="my-drawer" className="drawer-overlay">
+                <div className="drawer-side">
+                    <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay">
                     </label>
-                    <ul className="menu text-white p-4 w-48 sm:w-80 bg-base-200 text-base relative">
-                        <li className="w-fit text-white border rounded-full hover:bg-blue-500 z-50">
+                    <ul className="menu min-h-full p-4 w-48 sm:w-80 bg-base-200 text-base-content">
+                        <li className="w-fit text-white border z-50">
                             <button onClick={hideDrawer}>
                                 <AiFillCloseCircle size={24} />
                             </button>

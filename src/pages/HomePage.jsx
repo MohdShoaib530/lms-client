@@ -6,7 +6,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 function HomePage() {
     return (
         <HomeLayout>
-            <div className="pt-10 text-white flex flex-wrap items-center justify-center mx-5 mb-20 ">
+            <div className="pt-20 text-white flex flex-wrap items-center justify-center mx-5 mb-10 ">
                   <div className="lg:w-1/2 space-y-6">
                     <h1 className="text-5xl font-semibold">
                         Find out best
@@ -17,7 +17,7 @@ function HomePage() {
                     <p className="text-xl text-gray-200">
                         We have a large library of courses taught by highly skilled and qualified faculties at a very affordable cost.
                     </p>
-
+                    
                     <div className="space-x-6 gap-3 flex flex-col md:flex-row">
                         <Link to="/courses">
                             <button className="btn border-yellow-600">
