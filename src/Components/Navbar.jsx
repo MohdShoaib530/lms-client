@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className=" hidden lg:flex w-full">
-      <div className=" bg-gray-700 p-1  fixed flex items-center w-full justify-between">
+    <nav className=" hidden lg:flex w-full absolute z-50">
+      <div className=" bg-gray-700 p-1  fixed flex items-center w-full justify-between z-50">
         {/* Logo */}
         <div className="w-fit">
           <Link to="/" className="text-white text-xl font-bold">

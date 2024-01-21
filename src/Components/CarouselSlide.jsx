@@ -1,6 +1,6 @@
 function CarouselSlide({image, title, description, slideNumber, totalSlides}) {
     return (
-                <div id={`slide${slideNumber}`} className="carousel-item relative w-full">
+                <div id={`slide${slideNumber}`} className="carousel-item relative w-full mt-10">
                     <div className="flex flex-col items-center justify-center gap-4 px-[15%]">
                         <img src={image} className="w-40 rounded-full border-2 border-gray-400" />
                         <p className="text-xl text-gray-200">

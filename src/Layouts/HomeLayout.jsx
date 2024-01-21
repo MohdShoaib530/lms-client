@@ -39,7 +39,7 @@ function HomeLayout({ children }) {
     }
 
     return (
-        <div>
+        <div className='relative'>
             <Navbar />
             <div className="drawer absolute left-0 z-50 w-full">
                 <input className="drawer-toggle" id="my-drawer" type="checkbox" />
