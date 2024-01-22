@@ -49,12 +49,17 @@ const Navbar = () => {
 
         {/* Sign Up and Sign In Buttons */}
         <div className=" flex flex-row items-center justify-end gap-x-3 w-6/12">
-          <button className="btn-primary px-2 py-1 rounded-lg">
-            Sign Up
-          </button>
-          <button className="btn-secondary px-2 py-1 rounded-lg">
-            Sign In
-          </button>
+          <Link to={'/signup'}>
+             <button className="btn-primary px-2 py-1 rounded-lg">
+               Sign Up
+             </button>
+          </Link>
+          <Link to={'/signin'}>
+            <button className="btn-secondary px-2 py-1 rounded-lg">
+              Sign In
+            </button>
+          </Link>
+          
         </div>
         
       </div>

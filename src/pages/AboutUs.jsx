@@ -5,7 +5,7 @@ import HomeLayout from "../Layouts/HomeLayout";
 
 function AboutUs() {
 
-    
+    console.log({...(celebrities[0])});
 
     return (
         <HomeLayout>
