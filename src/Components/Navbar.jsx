@@ -1,6 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+  const isLoggedIn = useSelector((state) => (state?.auth?.isLoggedIn));
+
   return (
     <nav className=" hidden lg:flex w-full absolute z-50">
       <div className=" bg-gray-700 p-1  fixed flex items-center w-full justify-between z-50">
@@ -48,20 +52,36 @@ const Navbar = () => {
         </div>
 
         {/* Sign Up and Sign In Buttons */}
-        <div className=" flex flex-row items-center justify-end gap-x-3 w-6/12">
-          <Link to={'/signup'}>
-             <button className="btn-primary px-2 py-1 rounded-lg">
-               Sign Up
-             </button>
-          </Link>
-          <Link to={'/login'}>
-            <button className="btn-secondary px-2 py-1 rounded-lg">
-              Login
-            </button>
-          </Link>
-          
-        </div>
-        
+        {!isLoggedIn && (
+            <div className=" flex flex-row items-center justify-end gap-x-3 w-6/12">
+              <Link to={'/signup'}>
+                 <button className="btn-primary px-2 py-1 rounded-lg">
+                   Register
+                 </button>
+              </Link>
+              <Link to={'/login'}>
+                <button className="btn-secondary px-2 py-1 rounded-lg">
+                  Login
+                </button>
+              </Link>
+              
+            </div>
+            )}
+        {isLoggedIn && (
+          <div className=" flex flex-row items-center justify-end gap-x-3 w-6/12">
+            <Link to={'/profile'}>
+               <button className="btn-primary px-2 py-1 rounded-lg">
+                 Profile
+               </button>
+            </Link>
+            <Link to={'/logout'}>
+              <button className="btn-secondary px-2 py-1 rounded-lg">
+                Logout
+              </button>
+            </Link>
+            
+          </div>
+        )}
       </div>
     </nav>
   );

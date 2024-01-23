@@ -62,7 +62,7 @@ function Login(){
                     <label htmlFor="password" className="font-semibold">Email</label>
                     <input value={loginData.password} onChange={handleUserInput} type="password" required name="password" id="password" placeholder="Enter your password.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
-                <button  type="submit" className="hover:bg-yellow-600 w-full border border-yellow-500 bg-yellow-500 rounded-md py-2 font-semibold ">Create Account</button>
+                <button  type="submit" className="hover:bg-yellow-600 w-full border border-yellow-500 bg-yellow-500 rounded-md py-2 font-semibold ">Login</button>
                 <p>
                     Dont have an account ? <Link to={'/signup'} className="link text-accent">Sign Up</Link>
                 </p>
