@@ -53,7 +53,7 @@ function SignUp(){
              return
         }
 
-        if(!signUpData.fullName.length > 3) {
+        if(signUpData.fullName.length < 3) {
             toast.error(`Name must be atleast 3 characters`);
             return
         }
@@ -111,14 +111,14 @@ function SignUp(){
 
                 <div className="flex flex-col gap-1">
                     <label htmlFor="fullName" className="font-semibold">Name</label>
-                    <input value={signUpData.fullName} onChange={handleUserInput} type="text" required name="fullName" id="fullName" placeholder="Enter your Name.." className="bg-transparent px-2 py-1 border border-black" />
+                    <input value={signUpData.fullName}  onChange={handleUserInput} type="text" required name="fullName" id="fullName" placeholder="Enter your Name.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email" className="font-semibold">Email</label>
                     <input value={signUpData.email} onChange={handleUserInput} type="email" required name="email" id="email" placeholder="Enter your email.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="password" className="font-semibold">Email</label>
+                    <label htmlFor="password" className="font-semibold">Password</label>
                     <input value={signUpData.password} onChange={handleUserInput} type="password" required name="password" id="password" placeholder="Enter your password.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
                 <button  type="submit" className="hover:bg-yellow-600 w-full border border-yellow-500 bg-yellow-500 rounded-md py-2 font-semibold ">Create Account</button>

@@ -54,9 +54,9 @@ const Navbar = () => {
                Sign Up
              </button>
           </Link>
-          <Link to={'/signin'}>
+          <Link to={'/login'}>
             <button className="btn-secondary px-2 py-1 rounded-lg">
-              Sign In
+              Login
             </button>
           </Link>
           

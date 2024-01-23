@@ -100,7 +100,7 @@ function HomeLayout({ children }) {
                         {!isLoggedIn && (
                             <div className='absolute bottom-3 w-full flex flex-row items-center gap-4'>
                                 <button className='btn-primary px-3 rounded-lg text-lg'>
-                                    <Link to={'/signin'}>Sign In</Link>
+                                    <Link to={'/login'}>Login</Link>
                                 </button>
                                 <button className='btn-secondary px-2 rounded-lg text-lg'>
                                     <Link to={'/signup'}>Sign Up</Link>
