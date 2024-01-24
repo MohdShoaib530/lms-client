@@ -1,10 +1,22 @@
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { logout } from "../Redux/Slices/AuthSlice";
 
 const Navbar = () => {
 
   const isLoggedIn = useSelector((state) => (state?.auth?.isLoggedIn));
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  function handleLogout(e) {
+    e.preventDefault();
 
+    const res = dispatch(logout());
+    if(res?.payload?.success){
+        navigate('/')
+    }
+
+}
   return (
     <nav className=" hidden lg:flex w-full absolute z-50">
       <div className=" bg-gray-700 p-1  fixed flex items-center w-full justify-between z-50">
@@ -74,11 +86,9 @@ const Navbar = () => {
                  Profile
                </button>
             </Link>
-            <Link to={'/logout'}>
-              <button className="btn-secondary px-2 py-1 rounded-lg">
+            <button onClick={handleLogout} className="btn-secondary px-2 py-1 rounded-lg">
                 Logout
-              </button>
-            </Link>
+            </button>
             
           </div>
         )}

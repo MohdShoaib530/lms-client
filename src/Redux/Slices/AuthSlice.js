@@ -42,12 +42,30 @@ export const loginAccount = createAsyncThunk("/auth/login", async (data) => {
     }
 })
 
+export const logout = createAsyncThunk("/auth/logout", async () => {
+    try {
+        const res = axiosInstance.post("user/logout");
+        toast.promise(res, {
+            loading: "Wait! Logging out... ",
+            success: (data) => {
+                return data?.data?.message;
+            },
+            error: 'Failed to logout user'
+        });
+        return (await res)?.data;
+    } catch(error) {
+        console.log('error,',error);
+        toast.error(error?.response?.data?.message);
+    }
+})
+
 const authSlice = createSlice({
     name: "auth",
     initialState,
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(loginAccount.fulfilled, (state,action) => {
+        builder
+        .addCase(loginAccount.fulfilled, (state,action) => {
             if(action?.payload){
                 state.isLoggedIn = action?.payload?.success ;
                 localStorage.setItem('isLoggedIn',action?.payload?.success);
@@ -56,6 +74,22 @@ const authSlice = createSlice({
             localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
             state.data = action?.payload?.user;
             state.role = action?.payload?.user?.role;
+        })
+        .addCase(createAccount.fulfilled, (state,action) => {
+            if(action?.payload){
+                state.isLoggedIn = action?.payload?.success ;
+                localStorage.setItem('isLoggedIn',action?.payload?.success);
+            }
+            localStorage.setItem('data',JSON.stringify(action?.payload?.user));
+            localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
+            state.data = action?.payload?.user;
+            state.role = action?.payload?.user?.role;
+        })
+        .addCase(logout.fulfilled, (state) => {
+            state.isLoggedIn = false;
+            localStorage.clear();
+            state.data = {};
+            state.role = "guest";
         })
     }
 });

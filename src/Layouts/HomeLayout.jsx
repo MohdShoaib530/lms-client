@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
+import { logout } from '../Redux/Slices/AuthSlice';
 function HomeLayout({ children }) {
 
     const dispatch = useDispatch();
@@ -32,10 +33,11 @@ function HomeLayout({ children }) {
     function handleLogout(e) {
         e.preventDefault();
 
-        // const res = dispatch(logout());
-        // if(res?.payload?.success){}
+        const res = dispatch(logout());
+        if(res?.payload?.success){
+            navigate('/')
+        }
 
-        navigate('/')
     }
 
     return (
@@ -112,8 +114,8 @@ function HomeLayout({ children }) {
                                 <button className='btn-primary px-3 rounded-lg text-lg'>
                                     <Link to={'/user/profile'}>Profile</Link>
                                 </button>
-                                <button className='btn-secondary px-2 rounded-lg text-lg'>
-                                    <Link onClick={handleLogout}>Logout</Link>
+                                <button onClick={handleLogout} className='btn-secondary px-2 rounded-lg text-lg'>
+                                   Logout
                                 </button>
                             </div>
                         )}
