@@ -21,7 +21,11 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
         });
         return (await res).data;
     } catch(error) {
-        toast.error(error?.response?.data?.message);
+        if(error?.response){
+            toast.error(error?.response?.data?.message);
+        } else {
+            toast.error(error?.message)   
+        }
     }
 })
 
@@ -37,8 +41,11 @@ export const loginAccount = createAsyncThunk("/auth/login", async (data) => {
         });
         return (await res)?.data;
     } catch(error) {
-        console.log('error,',error);
-        toast.error(error?.response?.data?.message);
+        if(error?.response){
+            toast.error(error?.response?.data?.message);
+        } else {
+            toast.error(error?.message)   
+        }
     }
 })
 
@@ -54,8 +61,11 @@ export const logout = createAsyncThunk("/auth/logout", async () => {
         });
         return (await res)?.data;
     } catch(error) {
-        console.log('error,',error);
-        toast.error(error?.response?.data?.message);
+        if(error?.response){
+            toast.error(error?.response?.data?.message);
+        } else {
+            toast.error(error?.message)   
+        }
     }
 })
 
