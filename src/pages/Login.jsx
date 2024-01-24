@@ -53,13 +53,13 @@ function Login(){
         <HomeLayout>
         <div className="relative flex items-center justify-center flex-col bg-slate-400 pt-20 pb-8 w-full" >
             <form noValidate onSubmit={onLogin} className=" flex flex-col justify-center gap-3 text-white rounded-lg  shadow-[0_0_10px] px-4 py-1 w-fit">
-                <h3 className="text-2xl font-bold text-center">Registration Form</h3>
+                <h3 className="text-2xl font-bold text-center">Login User</h3>
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email" className="font-semibold">Email</label>
                     <input value={loginData.email} onChange={handleUserInput} type="email" required name="email" id="email" placeholder="Enter your email.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="password" className="font-semibold">Email</label>
+                    <label htmlFor="password" className="font-semibold">Password</label>
                     <input value={loginData.password} onChange={handleUserInput} type="password" required name="password" id="password" placeholder="Enter your password.." className="bg-transparent px-2 py-1 border border-black" />
                 </div>
                 <button  type="submit" className="hover:bg-yellow-600 w-full border border-yellow-500 bg-yellow-500 rounded-md py-2 font-semibold ">Login</button>
