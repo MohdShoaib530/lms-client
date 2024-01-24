@@ -42,9 +42,13 @@ const Navbar = () => {
           <Link to="/contact" className="text-white hover:text-gray-300">
             Contact Us
           </Link>
-          <Link to="/courses" className="text-white hover:text-gray-300">
-            Courses
-          </Link>
+          <div className="dropdown dropdown-hover">
+            <div tabIndex={0} role="button" className=" m-1">Courses</div>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><Link to="/courses" className="text-white">Software Engineering</Link></li>
+              <li><Link to="/courses" className="text-white">Artificial Intelligence</Link></li>
+            </ul>
+          </div>
         </div>
 
         {/* Search Bar */}
