@@ -1,3 +1,4 @@
+import { BsCodeSlash } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -22,12 +23,8 @@ const Navbar = () => {
       <div className=" bg-gray-700 p-1  fixed flex items-center w-full justify-between z-50">
         {/* Logo */}
         <div className="w-fit">
-          <Link to="/" className="text-white text-xl font-bold">
-            <div className="avatar online placeholder">
-              <div className="bg-neutral text-neutral-content rounded-full w-12">
-                <span className="text-xl">Edu</span>
-              </div>
-            </div>
+          <Link to="/" className="hover:bg-gray-600 p-1 text-white text-sm font-bold flex flex-col border border-gray-400 rounded-full items-center justify-center py-3">
+            <span className="inline-block"><code>{`</codemon>`}</code></span>
           </Link>
         </div>
 

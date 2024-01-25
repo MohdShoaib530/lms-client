@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
+import { isEmail, isPassword } from "../Helpers/RegexMatcher";
 import HomeLayout from "../layouts/HomeLayout";
 import { loginAccount } from "../Redux/Slices/AuthSlice";
 
@@ -30,6 +31,14 @@ function Login(){
         if(!loginData.email || !loginData.password){
             toast.error(`Please fill all the fields`);
              return
+        }
+        if(!isEmail(loginData.email)) {
+            return toast.error(`Please enter a valid email`);
+            
+        }
+        if(!isPassword(loginData.password)) {
+            return toast.error(`password to be at least 8 characters long, one uppercase letter, one lowercase letter, and one digit.`);
+        
         }
         
         const response = await dispatch(loginAccount(loginData));

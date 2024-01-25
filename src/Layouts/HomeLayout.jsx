@@ -53,8 +53,10 @@ function HomeLayout({ children }) {
                             className=" font-bold text-white m-4 lg:hidden"
                         />
                         <div className="navbar bg-black lg:hidden flex items-center justify-between w-full">
-                            <div className="navbar-center">
-                                <a className="btn btn-ghost text-xl">Edu</a>
+                            <div className="w-fit">
+                               <Link to="/" className="hover:bg-gray-600 p-1 text-white text-sm font-bold flex flex-col border border-gray-400 rounded-full items-center justify-center py-3">
+                                 <span className="inline-block"><code>{`</codemon>`}</code></span>
+                               </Link>
                             </div>
                             <div className="navbar-end">
                                 <button className="btn btn-ghost btn-circle">

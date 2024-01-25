@@ -4,6 +4,7 @@ import {BsPersonCircle} from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
+import { isEmail, isPassword } from "../Helpers/RegexMatcher";
 import HomeLayout from "../layouts/HomeLayout";
 import {createAccount } from '../Redux/Slices/AuthSlice'
 
@@ -49,21 +50,19 @@ function SignUp(){
         event.preventDefault();
 
         if(!signUpData.avatar && !signUpData.fullName && !signUpData.email && !signUpData.password){
-            toast.error(`Please fill all the fields`);
-             return
+            return toast.error(`Please fill all the fields`);
         }
 
         if(signUpData.fullName.length < 3) {
-            toast.error(`Name must be atleast 3 characters`);
-            return
+           return toast.error(`Name must be atleast 3 characters`);
         }
-        if(!signUpData.email.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)) {
-            toast.error(`Please enter a valid email`);
-            return
+        if(!isEmail(signUpData.email)) {
+            return toast.error(`Please enter a valid email`);
+            
         }
-        if(!signUpData.password.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)) {
-            toast.error(`password to be at least 8 characters long, one uppercase letter, one lowercase letter, and one digit.`);
-            return
+        if(!isPassword(signUpData.password)) {
+            return toast.error(`password to be at least 8 characters long, one uppercase letter, one lowercase letter, and one digit.`);
+        
         }
         
             const formData = new FormData();
