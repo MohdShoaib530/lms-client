@@ -1,4 +1,3 @@
-import { BsCodeSlash } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -9,10 +8,10 @@ const Navbar = () => {
   const isLoggedIn = useSelector((state) => (state?.auth?.isLoggedIn));
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  function handleLogout(e) {
+  async function handleLogout(e) {
     e.preventDefault();
 
-    const res = dispatch(logout());
+    const res = await dispatch(logout());
     if(res?.payload?.success){
         navigate('/')
     }

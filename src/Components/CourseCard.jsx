@@ -1,7 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
+
 function CourseCard({data}){
+    
+    const navigate = useNavigate();
 
 return (
-           <div className="w-40% lg:w-[32%] flex flex-col text-left border border-gray-500 rounded-lg p-3 bg-gray-900">
+           <div onClick={() => navigate('/course/description/',{state: {...data}})} className="w-40% lg:w-[32%] flex flex-col text-left border border-gray-500 rounded-lg p-3 bg-gray-900">
                <h1 className="font-semibold text-2xl mb-1 text-center">{data?.title}</h1>
                <img src={data?.thumbnail?.secure_url} alt="lecture" className="w-auto" />
                <div className="text-center">
