@@ -5,7 +5,7 @@ import { logout } from "../Redux/Slices/AuthSlice";
 
 const Navbar = () => {
 
-  const isLoggedIn = useSelector((state) => (state?.auth?.isLoggedIn));
+  const {isLoggedIn, role} = useSelector((state) => (state?.auth));
   const navigate = useNavigate();
   const dispatch = useDispatch();
   async function handleLogout(e) {
@@ -43,6 +43,9 @@ const Navbar = () => {
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><Link to="/courses" className="text-white">Software Engineering</Link></li>
               <li><Link to="/courses" className="text-white">Artificial Intelligence</Link></li>
+              <li>
+                {isLoggedIn && role === 'ADMIN' && (<Link to="/course/create" className="text-white">Create Course</Link>)}
+              </li>
             </ul>
           </div>
         </div>

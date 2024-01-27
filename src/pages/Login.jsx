@@ -42,7 +42,6 @@ function Login(){
         }
         
         const response = await dispatch(loginAccount(loginData));
-        console.log('res',response);
         if(response?.payload?.success){
             navigate('/');
         }
