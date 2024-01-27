@@ -14,6 +14,7 @@ import Denied from './pages/Denied';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import Profile from './pages/User/Profile';
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
 
          <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>} >
              <Route path='/course/create' element={<CourseCreate/>}></Route>
+         </Route>
+         <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]}/>} >
+            <Route path='/profile' element= {<Profile/>}></Route>
          </Route>
       </Routes>
     </>
