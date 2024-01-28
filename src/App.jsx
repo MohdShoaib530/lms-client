@@ -14,6 +14,7 @@ import Denied from './pages/Denied';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import EditProfile from './pages/User/EditProfile';
 import Profile from './pages/User/Profile';
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
          </Route>
          <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]}/>} >
             <Route path='/user/profile' element= {<Profile/>}></Route>
+         </Route>
+
+         <Route element={<RequireAuth allowedRoles={["ADMIN", "USER"]}/>} >
+            <Route path='/user/editprofile' element= {<EditProfile/>}></Route>
          </Route>
       </Routes>
     </>

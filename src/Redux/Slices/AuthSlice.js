@@ -48,6 +48,44 @@ export const loginAccount = createAsyncThunk("/auth/login", async (data) => {
         }
     }
 })
+export const editProfile = createAsyncThunk("/user/editprofile", async (data) => {
+    try {
+        const res = axiosInstance.put(`user/update/${data[0]}`, data[1]);
+        toast.promise(res, {
+            loading: "Wait! Updating user details... ",
+            success: (data) => {
+                return data?.data?.message;
+            },
+            error: 'Failed to update user details'
+        });
+        return (await res)?.data;
+    } catch(error) {
+        if(error?.response){
+            toast.error(error?.response?.data?.message);
+        } else {
+            toast.error(error?.message)   
+        }
+    }
+})
+export const getUserById = createAsyncThunk("/user/me", async () => {
+    try {
+        const res = axiosInstance.get("user/me/");
+        toast.promise(res, {
+            loading: "Wait! getting user details... ",
+            success: (data) => {
+                return data?.data?.message;
+            },
+            error: 'Failed to get user details'
+        });
+        return (await res)?.data;
+    } catch(error) {
+        if(error?.response){
+            toast.error(error?.response?.data?.message);
+        } else {
+            toast.error(error?.message)   
+        }
+    }
+})
 
 export const logout = createAsyncThunk("/auth/logout", async () => {
     try {
@@ -100,6 +138,16 @@ const authSlice = createSlice({
             localStorage.clear();
             state.data = {};
             state.role = "guest";
+        })
+        .addCase(getUserById.fulfilled, (state,action) => {
+            if(action?.payload){
+                state.isLoggedIn = action?.payload?.success ;
+                localStorage.setItem('isLoggedIn',action?.payload?.success);
+            }
+            localStorage.setItem('data',JSON.stringify(action?.payload?.user));
+            localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
+            state.data = action?.payload?.user;
+            state.role = action?.payload?.user?.role;
         })
     }
 });

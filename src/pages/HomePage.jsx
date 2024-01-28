@@ -8,6 +8,7 @@ function HomePage() {
         <HomeLayout>
             <div className="pt-20 text-white flex flex-wrap items-center justify-center mx-5 mb-10 ">
                   <div className="lg:w-1/2 space-y-6">
+                  <h1 className="text-center font-semibold text-2xl text-yellow-400 underline">Where Coding Meets Innovation</h1>
                     <h1 className=" text-5xl font-semibold">
                         Find out best 
                         <span className="px-2  text-yellow-500 font-bold">
