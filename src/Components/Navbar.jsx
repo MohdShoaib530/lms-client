@@ -84,7 +84,7 @@ const Navbar = () => {
             )}
         {isLoggedIn && (
           <div className=" flex flex-row items-center justify-end gap-x-3 w-6/12">
-            <Link to={'/profile'}>
+            <Link to={'/user/profile'}>
                <button className="btn-primary px-2 py-1 rounded-lg">
                  Profile
                </button>
