@@ -48,10 +48,10 @@ function EditProfile(){
     async function onFormSubmit(e){
         e.preventDefault();
 
-        // if(!data.fullName || !data.avatar) {
-        //     toast.error("All fields are mandatory");
-        //     return;
-        // }
+        if(!data.fullName && !data.avatar) {
+            toast.error("Please fill any of the fields to update");
+            return;
+        }
         if(data.fullName && data.fullName.length < 5) {
             toast.error("Name cannot be of less than 5 characters");
             return;
@@ -74,54 +74,34 @@ function EditProfile(){
 
     return(
         <HomeLayout>
-            <div className="flex items-center justify-center h-[100vh]">
-                <form
-                    onSubmit={onFormSubmit}
-                    className="flex flex-col justify-center gap-5 rounded-lg p-4 text-white w-80 min-h-[26rem] shadow-[0_0_10px_black]"
-                >
-                    <h1 className="text-center text-2xl font-semibold">Edit profile</h1>
-                    <label className="cursor-pointer" htmlFor="image_uploads">
-                        {data.previewImage ? (
-                            <img 
-                                className="w-28 h-28 rounded-full m-auto"
-                                src={data.previewImage}
-
-                            />
-                        ): (
-                            <BsPersonCircle className="w-28 h-28 rounded-full m-auto" />
-                        )}
-                    </label>
-                    <input 
-                        onChange={previewImage}
-                        className="hidden"
-                        type="file"
-                        id="image_uploads"
-                        name="image_uploads"
-                        accept=".jpg, .png, .svg, .jpeg"
-                
-                    />
-                    <div className="flex flex-col gap-1">
-                        <label htmlFor="fullName" className="text-lg font-semibold">Full Name</label>
-                        <input
-                            formNoValidate
-                            type="text"
-                            name="fullName"
-                            id="fullName"
-                            placeholder="Enter your name"
-                            className="bg-transparent px-2 py-1 border"
-                            value={data.fullName}
-                            onChange={handleOnChange}
-                        
-                        />
+            <div className=" w-full mx-auto h-screen flex flex-col items-center  gap-y-3 pt-24">
+                <form onSubmit={onFormSubmit} className="w-fit px-3 py-4 rounded-lg border border-gray-300  flex flex-col items-center justify-center">
+                    <div className="w-full flex flex-col items-center justify-center gap-3">
+                        <h1 className="text-yellow-600 font-semibold text-2xl mt-4">Edit Profile</h1>
+                        <label htmlFor="image">
+                            <div className="flex items-center justify-center">
+                               {data.previewImage ? 
+                               <img src={data.previewImage} alt="" className="w-24 h-24 rounded-full" /> :
+                               <BsPersonCircle className="w-24 h-24"/>
+                            }
+                            </div>
+                            <input onChange={previewImage} type="file" className="hidden" id="image" />
+                        </label>
                     </div>
-                    <button type="submit" className="w-full bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 text-lg cursor-pointer">
-                        Update profile
-                    </button>
-                    <Link to="/user/profile">
-                        <p className="link text-accent cursor-pointer flex items-center justify-center w-full gap-2">
-                            <AiOutlineArrowLeft /> Go back to profile
-                        </p>
-                    </Link>
+                    <div className="pb-4">
+                        <p className="font-semibold pt-3 pb-1">Enter your name</p>
+                        <input name="fullName" placeholder="Enter your name here" value={data.fullName}  onChange={handleOnChange} type="text"  className="rounded text-xl p-1 outline-none "/>
+                    </div>
+                    <div className="flex flex-row items-center justify-center w-2/3 gap-2">
+                        <button type='submit' className="btn-primary btn ">Change <br /> Password</button>
+                        <button type="submit" className="btn-secondary btn ">Edit Profile</button>
+                    </div>
+                    <div className="flex flex-row items-center justify-center text-green-600 mt-3">
+                       <Link to={'/user/profile'} className="flex flex-row items-center justify-center gap-2">
+                       <AiOutlineArrowLeft/>
+                        <button>Go back to profile</button>
+                       </Link>
+                    </div>
                 </form>
             </div>
         </HomeLayout>

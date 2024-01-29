@@ -6,7 +6,6 @@ import HomeLayout from "../../Layouts/HomeLayout";
 function Profile(){
 
     const userData = useSelector(state => state?.auth)
-    console.log(userData);
 
     
     return(
@@ -24,7 +23,7 @@ function Profile(){
                         <p>Email: </p><p>{userData?.data?.email}</p>
                         <p>Role: </p><p>{userData?.role}</p>
                         <p>Subscription: </p>
-                        <p>{userData?.subscription?.status === "active" ? "Action" : "Inactive"}</p>
+                        <p>{userData?.data?.subscription?.status === "active" ? "Action" : "Inactive"}</p>
                     </div>
                     <div className="flex items-center justify-between gap-2">
                         <Link

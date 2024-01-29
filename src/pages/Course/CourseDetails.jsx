@@ -7,7 +7,6 @@ function CourseDetails(){
 
     const {state} = useLocation()
     const {role , data} = useSelector(state => state?.auth)
-    console.log('rd',role,data);
     const navigate = useNavigate()
     return(
         <HomeLayout>
