@@ -14,6 +14,7 @@ import Denied from './pages/Denied';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import Checkout from './pages/Payment/Checkout';
+import CheckoutFailure from './pages/Payment/CheckoutFailure';
 import CheckoutSuccess from './pages/Payment/CheckoutSuccess';
 import SignUp from './pages/SignUp';
 import EditProfile from './pages/User/EditProfile';
@@ -46,6 +47,7 @@ function App() {
          <Route element={<RequireAuth allowedRoles={["USER"]}/>} >
             <Route path='/checkout' element= {<Checkout/>}></Route>
             <Route path='/checkout/success' element= {<CheckoutSuccess/>}></Route>
+            <Route path='/checkout/failure' element= {<CheckoutFailure/>}></Route>
          </Route>
       </Routes>
     </>

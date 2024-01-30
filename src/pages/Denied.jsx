@@ -11,7 +11,7 @@ function Denied(){
             <div className="bg-black absolute rotate-12 text-red-700">
                 Access denied
             </div>
-            <button onClick={() => navigate(-1)} className="btn btn-secondary">
+            <button onClick={() => navigate("/")} className="btn btn-secondary">
                 Go Back
             </button>
         </main>

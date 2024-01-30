@@ -34,16 +34,26 @@ function Checkout(){
             theme: {
                 color: "#F37254"
             },
-            handler: async function (response){
-                console.log('res',response);
-                paymentDetails.razorpay_payment_id = response.razorpay_payment_id;
-                paymentDetails.razorpay_signature = response.razorpay_signature;
-                paymentDetails.razorpay_subscription_id = response.razorpay_subscription_id;
-
-                toast.success("payment successfull");
-
-                const res = await dispatch(paymentVerify(paymentDetails));
-                res?.payload?.success ? navigate("/checkout/success" ) : navigate("/checkout/fail")
+            handler: async function (resp){
+                try {
+                    const response = await resp;
+            
+                    paymentDetails.razorpay_payment_id = response.razorpay_payment_id;
+                    paymentDetails.razorpay_signature = response.razorpay_signature;
+                    paymentDetails.razorpay_subscription_id = response.razorpay_subscription_id;
+            
+                    toast.success("payment successful");
+            
+                    const res = await dispatch(paymentVerify(paymentDetails));
+            
+                    if (res?.payload?.success) {
+                      navigate("/checkout/success");
+                    } else {
+                      navigate("/checkout/failure");
+                    }
+                } catch (error) {
+                    navigate("/checkout/failure");
+                }
 
             }
         }

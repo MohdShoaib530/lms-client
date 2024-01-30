@@ -42,6 +42,23 @@ export const paymentVerify = createAsyncThunk('/payment/verify', async (data) =>
         toast.error(error?.response?.data?.message);
     }
 });
+export const cancelSubscription = createAsyncThunk('/subscription/cancel', async () => {
+    try {
+        const res = axiosInstance.post('/payments/unsubscribe');
+        toast.promise(res, {
+            loading: 'Cancelling Subscription...',
+            success: (data) => {
+                return data?.data?.message;
+            },
+            error: (err) => {
+                return err?.response?.data?.message;
+            }
+        })
+        return (await res)?.data;
+    } catch (error) {
+        toast.error(error?.response?.data?.message);
+    }
+});
 
 
 const rezorpaySlice = createSlice({
@@ -66,6 +83,7 @@ const rezorpaySlice = createSlice({
             toast.success(action?.payload?.message);
             state.isPaymentVerified = action?.payload?.success;
         })
+        
     }
 })
 
