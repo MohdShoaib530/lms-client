@@ -52,6 +52,11 @@ function Profile(){
                             Cancel Subscription
                         </button>
                     )}
+                    {userData?.data?.role === "ADMIN" && (
+                        <button onClick={() => navigate('/admin/dashboard')} className="w-full btn-primary btn">
+                            Admin Dashboard
+                        </button>
+                    )}
                 </div>
             </div>
         </HomeLayout>

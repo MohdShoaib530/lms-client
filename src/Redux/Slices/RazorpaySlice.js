@@ -59,6 +59,21 @@ export const cancelSubscription = createAsyncThunk('/subscription/cancel', async
         toast.error(error?.response?.data?.message);
     }
 });
+export const getPaymentRecord = createAsyncThunk("/payments/record", async () => {
+    try {
+        const response = axiosInstance.get("/payments?count=100", );
+        toast.promise(response, {
+            loading: "Getting the payment records",
+            success: (data) => {
+                return data?.data?.message
+            },
+            error: "Failed to get payment records"
+        })
+        return (await response).data;
+    } catch(error) {
+        toast.error("Operation failed");
+    }
+});
 
 
 const rezorpaySlice = createSlice({
@@ -82,6 +97,11 @@ const rezorpaySlice = createSlice({
             console.log(action);
             toast.success(action?.payload?.message);
             state.isPaymentVerified = action?.payload?.success;
+        })
+        .addCase(getPaymentRecord.fulfilled, (state, action) => {
+            state.allPayments = action?.payload?.allPayments;
+            state.finalMonths = action?.payload?.finalMonths;
+            state.monthlySalesRecord = action?.payload?.monthlySalesRecord;
         })
         
     }
