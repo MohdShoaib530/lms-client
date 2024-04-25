@@ -19,7 +19,7 @@ function AllCourses(){
 
     return (
         <HomeLayout>
-            <div className="flex flex-col w-full pt-16 text-center bg-gray-800">
+            <div className="flex flex-col w-full pt-16 text-center bg-gray-800 h-screen">
                 <div>
                     <h1 className="text-xl md:text-3xl font-bold">Explore Our All Courses Created By <span className="text-yellow-700">Industry Experts</span></h1>
                     <h1 className="text-gray-500 text-2xl">Courses are well structured</h1>
