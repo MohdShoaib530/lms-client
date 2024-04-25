@@ -33,7 +33,7 @@ function Footer() {
         },
         {
           name: "Md Shoaib",
-          url: "https://mohdshoaib.me/",
+          url: "https://mohdshoaib9.netlify.app/",
           icon: <FcManager />,
         },
       ];
