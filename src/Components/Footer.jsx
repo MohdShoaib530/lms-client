@@ -1,6 +1,6 @@
-import { BiLogoGmail } from "react-icons/Bi";
 import { BsGithub,BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FcManager } from "react-icons/fc";
+import { SiGmail } from "react-icons/si";
 
 function Footer() {
     const currentDate = new Date();
@@ -24,7 +24,7 @@ function Footer() {
         {
           name: "Gmail",
           url: "mailto:mohdshoaib91530@gmail.com",
-          icon: <BiLogoGmail />,
+          icon: <SiGmail />,
         },
         {
           name: "Twitter",
