@@ -41,9 +41,9 @@ function HomeLayout({ children }) {
     }
 
     return (
-        <div className='bg-[rgb(33, 33, 33)] w-full relative'>
+        <div className='bg-gray-800 w-full relative'>
             <Navbar />
-            <div className="drawer absolute left-0 z-50 w-full">
+            <div className="drawer absolute bg-gray-800 left-0 z-50 w-full">
                 <input className="drawer-toggle" id="my-drawer" type="checkbox" />
                 <div className="drawer-content">
                     <label htmlFor="my-drawer" className="cursor-pointer relative flex items-center justify-between w-full">
@@ -67,13 +67,13 @@ function HomeLayout({ children }) {
                     </label>
                     <ul className="menu min-h-full p-4 w-48 sm:w-80 bg-base-200 text-base-content">
                         <li className="w-fit text-white  z-50">
-                            <button onClick={hideDrawer}>
+                            <button onClick={hideDrawer} className=' text-gray-400'>
                                 <AiFillCloseCircle size={24} />
                             </button>
                         </li>
                         <li>
                             <Link to="/">Home</Link>
-                        </li>
+                        </li>   
                         {
                             isLoggedIn && role === 'ADMIN' && (
                                 <Link to="/admin/dashboard" className="text-white">Admin Dashboard</Link>)

@@ -20,11 +20,11 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
             error: "Failed to create account"
         });
         return (await res).data;
-    } catch(error) {
-        if(error?.response){
+    } catch (error) {
+        if (error?.response) {
             toast.error(error?.response?.data?.message);
         } else {
-            toast.error(error?.message)   
+            toast.error(error?.message)
         }
     }
 })
@@ -40,11 +40,11 @@ export const loginAccount = createAsyncThunk("/auth/login", async (data) => {
             error: 'Failed to login user'
         });
         return (await res)?.data;
-    } catch(error) {
-        if(error?.response){
+    } catch (error) {
+        if (error?.response) {
             toast.error(error?.response?.data?.message);
         } else {
-            toast.error(error?.message)   
+            toast.error(error?.message)
         }
     }
 })
@@ -59,11 +59,11 @@ export const editProfile = createAsyncThunk("/user/editprofile", async (data) =>
             error: 'Failed to update user details'
         });
         return (await res)?.data;
-    } catch(error) {
-        if(error?.response){
+    } catch (error) {
+        if (error?.response) {
             toast.error(error?.response?.data?.message);
         } else {
-            toast.error(error?.message)   
+            toast.error(error?.message)
         }
     }
 })
@@ -78,11 +78,11 @@ export const getUserById = createAsyncThunk("/user/me", async () => {
             error: 'Failed to get user details'
         });
         return (await res)?.data;
-    } catch(error) {
-        if(error?.response){
+    } catch (error) {
+        if (error?.response) {
             toast.error(error?.response?.data?.message);
         } else {
-            toast.error(error?.message)   
+            toast.error(error?.message)
         }
     }
 })
@@ -98,11 +98,11 @@ export const logout = createAsyncThunk("/auth/logout", async () => {
             error: 'Failed to logout user'
         });
         return (await res)?.data;
-    } catch(error) {
-        if(error?.response){
+    } catch (error) {
+        if (error?.response) {
             toast.error(error?.response?.data?.message);
         } else {
-            toast.error(error?.message)   
+            toast.error(error?.message)
         }
     }
 })
@@ -113,42 +113,42 @@ const authSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder
-        .addCase(loginAccount.fulfilled, (state,action) => {
-            if(action?.payload){
-                state.isLoggedIn = action?.payload?.success ;
-                localStorage.setItem('isLoggedIn',action?.payload?.success);
-            }
-            localStorage.setItem('data',JSON.stringify(action?.payload?.user));
-            localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
-            state.data = action?.payload?.user;
-            state.role = action?.payload?.user?.role;
-        })
-        .addCase(createAccount.fulfilled, (state,action) => {
-            if(action?.payload){
-                state.isLoggedIn = action?.payload?.success ;
-                localStorage.setItem('isLoggedIn',action?.payload?.success);
-            }
-            localStorage.setItem('data',JSON.stringify(action?.payload?.user));
-            localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
-            state.data = action?.payload?.user;
-            state.role = action?.payload?.user?.role;
-        })
-        .addCase(logout.fulfilled, (state) => {
-            state.isLoggedIn = false;
-            localStorage.clear();
-            state.data = {};
-            state.role = "guest";
-        })
-        .addCase(getUserById.fulfilled, (state,action) => {
-            if(action?.payload){
-                state.isLoggedIn = action?.payload?.success ;
-                localStorage.setItem('isLoggedIn',action?.payload?.success);
-            }
-            localStorage.setItem('data',JSON.stringify(action?.payload?.user));
-            localStorage.setItem('role',JSON.stringify(action?.payload?.user?.role));
-            state.data = action?.payload?.user;
-            state.role = action?.payload?.user?.role;
-        })
+            .addCase(loginAccount.fulfilled, (state, action) => {
+                if (action?.payload) {
+                    state.isLoggedIn = action?.payload?.success;
+                    localStorage.setItem('isLoggedIn', action?.payload?.success);
+                }
+                localStorage.setItem('data', JSON.stringify(action?.payload?.user));
+                localStorage.setItem('role', JSON.stringify(action?.payload?.user?.role));
+                state.data = action?.payload?.user;
+                state.role = action?.payload?.user?.role;
+            })
+            .addCase(createAccount.fulfilled, (state, action) => {
+                if (action?.payload) {
+                    state.isLoggedIn = action?.payload?.success;
+                    localStorage.setItem('isLoggedIn', action?.payload?.success);
+                }
+                localStorage.setItem('data', JSON.stringify(action?.payload?.user));
+                localStorage.setItem('role', JSON.stringify(action?.payload?.user?.role));
+                state.data = action?.payload?.user;
+                state.role = action?.payload?.user?.role;
+            })
+            .addCase(logout.fulfilled, (state) => {
+                state.isLoggedIn = false;
+                localStorage.clear();
+                state.data = {};
+                state.role = "guest";
+            })
+            .addCase(getUserById.fulfilled, (state, action) => {
+                if (action?.payload) {
+                    state.isLoggedIn = action?.payload?.success;
+                    localStorage.setItem('isLoggedIn', action?.payload?.success);
+                }
+                localStorage.setItem('data', JSON.stringify(action?.payload?.user));
+                localStorage.setItem('role', JSON.stringify(action?.payload?.user?.role));
+                state.data = action?.payload?.user;
+                state.role = action?.payload?.user?.role;
+            })
     }
 });
 

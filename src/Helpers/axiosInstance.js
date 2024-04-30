@@ -5,7 +5,7 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const axiosInstance = axios.create();
 
 axiosInstance.defaults.baseURL = backendUrl;
-axiosInstance.defaults.withCredentials = true;
+axiosInstance.defaults.withCredentials = false;
 
 export default axiosInstance;
 

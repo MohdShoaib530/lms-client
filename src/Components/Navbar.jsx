@@ -23,7 +23,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="w-fit">
           <Link to="/" className="">
-            <span className="inline-block"><code>{`</code>`}</code></span>
+            <span className="inline-block text-white"><code>{`</code>`}</code></span>
           </Link>
         </div>
 
@@ -38,13 +38,13 @@ const Navbar = () => {
           <Link to="/contact" className="text-white hover:text-gray-300">
             Contact Us
           </Link>
-          <div className="dropdown dropdown-hover">
-            <div tabIndex={0} role="button" className=" m-1">Courses</div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><Link to="/courses" className="text-white">Software Engineering</Link></li>
-              <li><Link to="/courses" className="text-white">Artificial Intelligence</Link></li>
+          <div className="dropdown dropdown-hover ">
+            <div tabIndex={0} role="button" className="text-white m-1">Courses</div>
+            <ul tabIndex={0} className="bg-gray-300 dark:bg-gray-700 dropdown-content z-[1] menu p-2 rounded-box w-52">
+              <li><Link to="/courses" className="dark:text-white text-gray-900">Software Engineering</Link></li>
+              <li><Link to="/courses" className="dark:text-white text-gray-900">Artificial Intelligence</Link></li>
               <li>
-                {isLoggedIn && role === 'ADMIN' && (<Link to="/course/create" className="text-white">Create Course</Link>)}
+                {isLoggedIn && role === 'ADMIN' && (<Link to="/course/create" className="dark:text-white text-gray-900">Create Course</Link>)}
               </li>
             </ul>
           </div>

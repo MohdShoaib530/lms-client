@@ -38,8 +38,8 @@ function Footer() {
         },
       ];
     return (
-        <>
-            <footer className="footer p-10 bg-[rgb(33, 33, 33)] text-base-content flex flex-wrap gap-14 sm:flex-row items-center justify-between">
+        <div className='bg-gray-800 text-white'>
+            <footer className="footer p-10  flex flex-wrap gap-14 sm:flex-row items-center justify-between">
                 <nav>
                     <header className="footer-title">Courses</header>
                     <a className="link link-hover">FULL STACK DEV</a>
@@ -62,7 +62,7 @@ function Footer() {
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
             </footer>
-            <footer className="footer px-10 py-4 border-t bg-[rgb(33, 33, 33)] text-base-content border-base-300">
+            <footer className="footer text-white px-10 py-4 border-t ">
                 <aside className="items-center grid-flow-col">
                     <p>© {year} CODE Pvt Ltd. <br /> All rights reserved.</p>
                 </aside>
@@ -82,7 +82,7 @@ function Footer() {
                     </div>
                 </nav>
             </footer>
-        </>  
+        </div>  
     );
 }
 

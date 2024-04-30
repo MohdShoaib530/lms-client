@@ -73,12 +73,12 @@ function ContactForm() {
 
   return (
     <HomeLayout>
-      <div className="bg-[rgb(33, 33, 33)] relative flex items-center justify-center flex-col  pt-36 pb-8 w-full">
+      <div className="bg-gray-800 relative flex items-center justify-center pt-36 pb-8 w-full">
         <form
           action=""
           noValidate
           onSubmit={onFormSubmit}
-          className="  shadow-[0_0_10px] bg-gray-700 flex flex-col justify-center gap-3 text-white rounded-lg  px-4 py-1 w-fit"
+          className="bg-gray-700 flex flex-col justify-center gap-3 text-white rounded-lg  px-4 py-1 w-fit"
         >
           <h3 className="text-2xl font-bold text-center">Contact Us</h3>
           <div className="flex flex-col gap-1">
