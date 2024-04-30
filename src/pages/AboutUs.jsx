@@ -9,9 +9,9 @@ function AboutUs() {
 
     return (
         <HomeLayout>
-            <div className=" pl-20 pt-20 flex flex-col text-white">
-                <div className="flex items-center gap-5 mx-10">
-                    <section className="w-1/2 space-y-10">
+            <div className="pt-36 lg:pt-20 flex flex-col items-center justify-center text-white">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-5 px-10 w-full">
+                    <section className="w-full lg:w-fit space-y-10">
                         <h1 className="text-5xl text-yellow-500 font-semibold">
                             Affordable and quality education
                         </h1>
@@ -23,7 +23,7 @@ function AboutUs() {
                         </p>
                     </section>
 
-                    <div className="w-1/2">
+                    <div className="w-fit">
                         <img
                             id="test1"
                             style={{

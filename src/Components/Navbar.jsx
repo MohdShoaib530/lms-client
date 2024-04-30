@@ -19,7 +19,7 @@ const Navbar = () => {
 }
   return (
     <nav className=" hidden lg:flex w-full absolute z-50">
-      <div className=" bg-gray-700 p-3  fixed flex items-center w-full justify-between z-50">
+      <div className=" bg-gray-700 p-2 px-3  fixed flex items-center w-full justify-between z-50 mt-2">
         {/* Logo */}
         <div className="w-fit">
           <Link to="/" className="">

@@ -95,8 +95,8 @@ function SignUp(){
 
     return (
         <HomeLayout>
-        <div className="relative flex items-center justify-center flex-col bg-slate-400 pt-20 pb-8 w-full" >
-            <form action=""noValidate onSubmit={createNewAccount} className=" flex flex-col justify-center gap-3 text-white rounded-lg  shadow-[0_0_10px] px-4 py-1 w-fit">
+        <div className="bg-[rgb(33, 33, 33)] relative flex items-center justify-center flex-col  pt-20 pb-20 w-full" >
+            <form action=""noValidate onSubmit={createNewAccount} className=" flex flex-col bg-gray-700 justify-center gap-3 text-white rounded-lg  shadow-[0_0_10px] px-4 py-1 w-fit">
                 <h3 className="text-2xl font-bold text-center">Register User</h3>
                 <label htmlFor="image_uploads" className="cursor-pointer">
                     {previewIimage ? (

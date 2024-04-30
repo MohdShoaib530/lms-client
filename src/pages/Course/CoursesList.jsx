@@ -19,12 +19,12 @@ function AllCourses(){
 
     return (
         <HomeLayout>
-            <div className="flex flex-col w-full pt-16  text-center bg-gray-800 ">
-                <div>
-                    <h1 className="text-xl md:text-3xl font-bold">Explore Our All Courses Created By <span className="text-yellow-700">Industry Experts</span></h1>
+            <div className="flex flex-col w-full pt-40 pb-10  text-center bg-[rgb(33, 33, 33)] ">
+                <div className='flex flex-col items-center justify-center'>
+                    <h1 className="text-xl md:text-3xl font-bold">Explore Our All Courses Created By <span className="text-yellow-700 text-xl md:text-3xl">Industry Experts</span></h1>
                     <h1 className="text-gray-500 text-2xl">Courses are well structured</h1>
                 </div>
-                <div className="flex flex-wrap w-full pt-5 px-16 gap-4 items-center justify-evenly">
+                <div className="flex flex-wrap w-full pt-5 md:px-16 px-4 gap-4 items-center justify-evenly">
                     {courseData?.map((course) => {
                        return <CourseCard data={course} key={course.id}/>   
                     })}

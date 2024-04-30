@@ -41,7 +41,7 @@ function HomeLayout({ children }) {
     }
 
     return (
-        <div className='relative'>
+        <div className='bg-[rgb(33, 33, 33)] w-full relative'>
             <Navbar />
             <div className="drawer absolute left-0 z-50 w-full">
                 <input className="drawer-toggle" id="my-drawer" type="checkbox" />

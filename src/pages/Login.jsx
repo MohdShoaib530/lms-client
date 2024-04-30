@@ -59,8 +59,8 @@ function Login(){
 
     return (
         <HomeLayout>
-        <div className="relative flex items-center justify-center flex-col bg-slate-400 pt-20 pb-8 w-full" >
-            <form noValidate onSubmit={onLogin} className=" flex flex-col justify-center gap-3 text-white rounded-lg  shadow-[0_0_10px] px-4 py-1 w-fit">
+        <div className="bg-[rgb(33, 33, 33)] relative flex items-center justify-center flex-col  pt-36 pb-8 w-full" >
+            <form noValidate onSubmit={onLogin} className="bg-gray-700 flex flex-col justify-center gap-3 text-white rounded-lg  shadow-[0_0_10px] px-4 py-1 w-fit">
                 <h3 className="text-2xl font-bold text-center">Login User</h3>
                 <div className="flex flex-col gap-1">
                     <label htmlFor="email" className="font-semibold">Email</label>
