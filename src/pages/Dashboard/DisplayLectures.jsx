@@ -32,9 +32,9 @@ function DisplayLectures() {
         </div>
 
         {lectures && lectures.length > 0 ? (
-          <div className="flex justify-center gap-10 w-full flex-col lg:flex-row">
+          <div className="flex justify-center gap-10 lg:gap-1 flex-col lg:flex-row">
             {/* left section for playing videos and displaying course details to admin */}
-            <div className="space-y-5 p-2 rounded-lg w-full lg:w-1/2 shadow-[0_0_10px_black]">
+            <div className="space-y-5 p-2 rounded-lg w-11/12 lg:w-5/12 shadow-[0_0_10px_black]">
               <video
                 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
                 className="object-fill rounded-tl-lg rounded-tr-lg w-full"
@@ -57,7 +57,7 @@ function DisplayLectures() {
             </div>
 
             {/* right section for displaying list of lectres */}
-            <ul className="w-full lg:w-1/2 p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
+            <ul className="lg:w-5/12 p-2 rounded-lg w-11/12 shadow-[0_0_10px_black] space-y-4">
               <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
                 <p>Lectures list</p>
                 {role === "ADMIN" && (
