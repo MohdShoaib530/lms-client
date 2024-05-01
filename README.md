@@ -1,5 +1,7 @@
 # LMS Frontend
 
+This repository contains the client-side application for the Learning Management System (LMS) built using Node.js, react, redux-toolkit and tailwind
+
 ### Setup instruction
 
 1. Clone the project
