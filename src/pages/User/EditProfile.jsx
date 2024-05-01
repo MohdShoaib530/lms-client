@@ -72,7 +72,7 @@ function EditProfile() {
 
   return (
     <HomeLayout>
-      <div className="bg-[rgb(33, 33, 33)] w-full mx-auto h-screen flex flex-col items-center  gap-y-3 pt-24">
+      <div className="bg-[rgb(33, 33, 33)] w-full mx-auto  flex flex-col items-center pb-16  gap-y-3 pt-40">
         <form
           onSubmit={onFormSubmit}
           className="bg-gray-700 w-fit px-3 py-4 rounded-lg border border-gray-300  flex flex-col items-center justify-center"
