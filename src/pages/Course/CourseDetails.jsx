@@ -16,8 +16,8 @@ function CourseDetails() {
   }
   return (
     <HomeLayout>
-      <div className=" flex flex-col items-center justify-center text-white bg-gray-800 w-full  pt-32 pb-16 px-10">
-        <div className="flex lg:flex-row flex-col  gap-10  relative w-full sm:w-4/6 border border-gray-400 p-2 rounded-lg px-4 ">
+      <div className=" flex flex-col items-center justify-center text-white bg-gray-800 w-full  pt-32 pb-16 px-3">
+        <div className="flex lg:flex-row flex-col  gap-10  relative w-full sm:w-4/6 border border-gray-400 p-2 rounded-lg px-3 ">
           <div className="space-y-5 w-auto lg:w-2/6">
             <img
               src={state.thumbnail.secure_url}

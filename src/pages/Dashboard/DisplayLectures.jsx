@@ -32,9 +32,9 @@ function DisplayLectures() {
         </div>
 
         {lectures && lectures.length > 0 ? (
-          <div className="flex justify-center gap-10 sm:w-full w-11/12  flex-col lg:flex-row flex-wrap">
+          <div className="flex justify-center gap-10 w-full flex-col lg:flex-row">
             {/* left section for playing videos and displaying course details to admin */}
-            <div className="space-y-5 w-[28rem] p-2 rounded-lg shadow-[0_0_10px_black]">
+            <div className="space-y-5 p-2 rounded-lg w-full lg:w-1/2 shadow-[0_0_10px_black]">
               <video
                 src={lectures && lectures[currentVideo]?.lecture?.secure_url}
                 className="object-fill rounded-tl-lg rounded-tr-lg w-full"
@@ -45,19 +45,19 @@ function DisplayLectures() {
               <div>
                 <h1>
                   <span className="text-yellow-500"> Title: </span>
-                  {lectures && lectures[currentVideo]?.title}
+                  <span className='text-gray-200'>{lectures && lectures[currentVideo]?.title}</span>
                 </h1>
                 <p>
                   <span className="text-yellow-500 line-clamp-4">
                     Description:{" "}
                   </span>
-                  {lectures && lectures[currentVideo]?.description}
+                  <span className='text-gray-200'>{lectures && lectures[currentVideo]?.description}</span>
                 </p>
               </div>
             </div>
 
             {/* right section for displaying list of lectres */}
-            <ul className="wsm:w-full w-11/12 p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
+            <ul className="w-full lg:w-1/2 p-2 rounded-lg shadow-[0_0_10px_black] space-y-4">
               <li className="font-semibold text-xl text-yellow-500 flex items-center justify-between">
                 <p>Lectures list</p>
                 {role === "ADMIN" && (
@@ -74,7 +74,7 @@ function DisplayLectures() {
               {lectures &&
                 lectures.map((lecture, idx) => {
                   return (
-                    <li className="space-y-2" key={lecture._id}>
+                    <li className="space-y-2 text-gray-200" key={lecture._id}>
                       <p
                         className="cursor-pointer"
                         onClick={() => setCurrentVideo(idx)}
