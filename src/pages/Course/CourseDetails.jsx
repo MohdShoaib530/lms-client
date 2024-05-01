@@ -16,9 +16,9 @@ function CourseDetails() {
   }
   return (
     <HomeLayout>
-      <div className=" flex flex-col items-center justify-center text-white bg-gray-800 w-full  pt-16 mx-3 pb-16">
-        <div className="flex lg:flex-row flex-col  gap-10  relative w-full sm:w-1/2 border border-gray-400 p-2 rounded-lg px-3">
-          <div className="space-y-5 w-auto">
+      <div className=" flex flex-col items-center justify-center text-white bg-gray-800 w-full  pt-24 mx-3 pb-16 px-3">
+        <div className="flex lg:flex-row flex-col  gap-10  relative w-full sm:w-1/2 border border-gray-400 p-2 rounded-lg ">
+          <div className="space-y-5 w-auto lg:w-2/6">
             <img
               src={state.thumbnail.secure_url}
               alt="thumbnail"
@@ -66,7 +66,7 @@ function CourseDetails() {
               )}
             </div>
           </div>
-          <div className="space-y-2 text-xl w-auto flex flex-col items- justify-start">
+          <div className="space-y-2 text-xl w-auto flex flex-col items- justify-start lg:w-4/6">
             <h1 className="text-2xl font-bold text-yellow-500 mb-5 text-start underline">
               {state?.title}
             </h1>
