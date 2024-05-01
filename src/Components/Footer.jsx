@@ -1,6 +1,8 @@
 import { BsGithub,BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { FcManager } from "react-icons/fc";
+import { MdOutlineEmail } from "react-icons/md";
 import { SiGmail } from "react-icons/si";
+import { TbBrandUpwork } from "react-icons/tb";
 
 function Footer() {
     const currentDate = new Date();
@@ -18,18 +20,23 @@ function Footer() {
         },
         {
           name: "Instagram",
-          url: "https://www.instagram.com/mohd.shoaib_123/",
+          url: "https://www.instagram.com/mohd.shoaib_91/",
           icon: <BsInstagram />,
         },
         {
           name: "Gmail",
           url: "mailto:mohdshoaib91530@gmail.com",
-          icon: <SiGmail />,
+          icon: <MdOutlineEmail />,
         },
         {
           name: "Twitter",
-          url: "https://twitter.com/MohdShoaib530",
+          url: "https://twitter.com/MohdShoaib915",
           icon: <BsTwitter />,
+        },
+        {
+          name: "Upwork",
+          url: "https://www.upwork.com/freelancers/~0102a4f512110275d7",
+          icon: <TbBrandUpwork />,
         },
         {
           name: "Md Shoaib",

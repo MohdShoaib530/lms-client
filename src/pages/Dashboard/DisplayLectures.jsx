@@ -54,7 +54,7 @@ function DisplayLectures() {
                   <span className='text-gray-200'>{lectures && lectures[currentVideo]?.description}</span>
                 </p>
               </div>
-            </div>
+            </div> 
 
             {/* right section for displaying list of lectres */}
             <ul className="lg:w-5/12 p-2 rounded-lg w-11/12 shadow-[0_0_10px_black] space-y-4">
